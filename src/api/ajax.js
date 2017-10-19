@@ -1,4 +1,4 @@
-export default function ajax(path, callback) {
+export default function Ajax(path, callback) {
   const httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function() {
     if (httpRequest.readyState === 4) {
