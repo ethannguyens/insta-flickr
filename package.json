@@ -7,9 +7,12 @@
     "prestart": "babel-node app/tools/startMessage.js",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
     "open:src": "export NODE_ENV='dev' && babel-node app/tools/srcServer.js",
+    "open:test": "node app/test/open.js",
     "lint": "node_modules/.bin/esw webpack.config.* app src",
     "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter progress app/tools/testSetup.js \"src/**/*.test.js\" \"app/**/*.test.js\" ",
+    "test": "mocha --reporter progress app/test/nodeTestSetup.js \"src/**/*.test.js\" \"app/**/*.test.js\" ",
+    "test:browser": "yarn run remove:test && npm-run-all --parallel unit:chrome open:test",
+    "unit:chrome": "webpack-dev-server --config webpack.test.config.js --hot --inline",
     "test:watch": "npm run test -- --watch",
     "test-single": "mocha --reporter progress app/tools/testSetup.js",
     "test-single:watch": "npm run test-single -- --watch",
@@ -21,7 +24,8 @@
     "postbuild": "babel-node app/tools/distServer.js",
     "babel-test": "babel-node src/modules/word-prime-count",
     "heroku-prebuild": "npm-run-all clean-dist lint build:html",
-    "heroku-postbuild": "babel-node app/tools/build.js"
+    "heroku-postbuild": "babel-node app/tools/build.js",
+    "remove:test": "rm -rf app/test/bundle"
   },
   "repository": {
     "type": "git",
@@ -74,9 +78,11 @@
     "jsdom": "8.1.0",
     "json-loader": "0.5.4",
     "mocha": "3.5.0",
+    "mocha-loader": "^1.1.1",
     "nock": "9.0.14",
     "node-sass": "3.13.0",
     "npm-run-all": "1.8.0",
+    "null-loader": "^0.1.1",
     "open": "0.0.5",
     "prop-types": "15.5.10",
     "react-addons-test-utils": "15.2.0",
@@ -84,10 +90,12 @@
     "redux-mock-store": "1.0.2",
     "rimraf": "2.5.2",
     "sass-loader": "4.0.2",
+    "sauce-connect-launcher": "^1.2.2",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "3.4.1",
     "webpack-dev-middleware": "1.6.1",
+    "webpack-dev-server": "^2.9.3",
     "webpack-hot-middleware": "2.10.0"
   }
 }
