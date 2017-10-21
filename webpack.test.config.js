@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 //Default Production
 const localhost = 'localhost';
-const port  = 3003;
+const port = 3003;
 
 const configuration = {
   entry: 'mocha-loader!./app/test/index.js',
@@ -15,12 +15,17 @@ const configuration = {
     path: path.join(__dirname, 'app/test/bundle'),
     publicPath: `http://localhost:${port}/app/test/bundle`
   },
-    devServer: {
-      host: localhost,
-      port: 3003
-    },
+  devServer: {
+    host: localhost,
+    port: port,
+    inline: false,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    }
+  },
   plugins: [
-    new webpack.DefinePlugin({ "global.GENTLY": false,
+    new webpack.DefinePlugin({
+      "global.GENTLY": false
     })
   ],
   module: {
@@ -42,9 +47,10 @@ const configuration = {
     tls: 'empty',
     child_process: 'empty'
   },
-  externals:[{
+  externals: [{
     xmlhttprequest: '{XMLHttpRequest:XMLHttpRequest}',
-    nodeModules: 'node_modules'}]
+    nodeModules: 'node_modules'
+  }]
 };
 
 module.exports = configuration;

@@ -8,15 +8,17 @@ describe('Ajax', () => {
   });
 
   it('should make an ajax call and return the correct data', (done) => {
-    //arrange
-    const words = {words: {a: {count: 1, prime: true}}};
-    nock(`http://localhost:5000`)
+    //Arrange
+    const expectedData =  {
+      test: true
+    };
+    nock(`http://test.com`)
       .get('/data')
-      .reply(200, words);
+      .reply(200);
 
-    //act and assert
-    ajax(`http://localhost:5000/data`, data => {
-      expect(data).toEqual(words);
+    //Act and Assert
+    ajax(`http://test.com/data`, data => {
+      expect(data).toEqual(expectedData);
       done();
     });
 
