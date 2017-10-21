@@ -1,3 +1,4 @@
+/*eslint-disable no-console */
 import sauceCredentials from './sauce-credentials';
 
 const sauceConnectLauncher = require('sauce-connect-launcher');

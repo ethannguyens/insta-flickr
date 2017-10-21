@@ -1,3 +1,4 @@
+/*eslint-disable no-console */
 import browsers from './browsers';
 import sauceCredentials from './sauce-credentials';
 

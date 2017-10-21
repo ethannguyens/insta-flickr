@@ -1,3 +1,5 @@
+//Legacy mocha-loader code with changes to support sauce-labs
+/*eslint-disable*/
 process.nextTick(function () {
   delete require.cache[module.id];
   if (typeof window !== "undefined" && window.mochaPhantomJS) {

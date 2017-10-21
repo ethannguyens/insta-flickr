@@ -33,5 +33,5 @@ export default {
     "windows 7",
     "opera",
     "12"
-  ],
+  ]
 };
