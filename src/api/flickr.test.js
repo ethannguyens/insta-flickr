@@ -10,8 +10,7 @@ describe("Flickr Api test", () => {
 
     //Act && Assert
     Flickr.getFeeds(tags).then(items => {
-      console.log(items.length);
-      expect(items.length).toEqual(200);
+      expect(items.length).toEqual(20);
     });
   });
 });

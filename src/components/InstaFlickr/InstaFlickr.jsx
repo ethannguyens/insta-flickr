@@ -4,7 +4,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as instaFlickrActions from '../../actions/instaFlickrActions';
 
-import FLickr from '../../api/flickr';
+
+import ImageSection from './ImageSection';
 
 class InstaFlickr extends React.Component {
   constructor(props, context) {
@@ -13,7 +14,9 @@ class InstaFlickr extends React.Component {
 
   render() {
     return (
-      <div className="insta-flickr">Insta Flickr</div>
+      <div className="insta-flickr">
+        <ImageSection />
+      </div>
     )
   }
 }

@@ -8,7 +8,9 @@ class Flickr {
       fetchJsonp(`${flickrUrl}${tags}`, {
         jsonpCallbackFunction: 'jsonFlickrFeed'
       }).then(response => {
-        response.json().then(json => resolve(json.items))
+        response.json().then(json => {
+          resolve(json.items)
+        })
       }).catch(function (err) {
         console.log(err);
         reject(err);

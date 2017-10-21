@@ -7,8 +7,8 @@ export function loadFeedsSuccess(items) {
   return {type: types.LOAD_FEEDS_SUCCESS, items};
 }
 
-export function loadFeeds() {
+export function loadFeeds(tags) {
   return (dispatch) => {
-    Flickr.getFeeds().then(items => dispatch(loadFeedsSuccess(items)));
+    Flickr.getFeeds(tags).then(items => dispatch(loadFeedsSuccess(items)));
   };
 }

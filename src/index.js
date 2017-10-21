@@ -9,7 +9,7 @@ import routes from './routes';
 import {loadFeeds} from './actions/instaFlickrActions';
 
 const store = configureStore();
-store.dispatch(loadFeeds());
+store.dispatch(loadFeeds('nature'));
 
 render(
   <Provider store={store}>
