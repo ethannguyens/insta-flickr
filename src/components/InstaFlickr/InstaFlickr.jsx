@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import * as instaFlickrActions from '../../actions/instaFlickrActions';
 
 
-import ImageSection from './ImageSection';
+import ImageSection from './ImageSection/ImageSection';
 
 class InstaFlickr extends React.Component {
   constructor(props, context) {

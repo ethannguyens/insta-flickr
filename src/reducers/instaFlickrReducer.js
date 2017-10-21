@@ -5,9 +5,15 @@ export default function instaFlickrReducer(state = initialState.instaFlickr, act
   switch (action.type) {
     case types.LOAD_FEEDS_SUCCESS:
       return Object.assign({}, state, {items: action.items});
-    case types.SAVE_ITEM_SUCCESS:
-      return Object.assign({}, state, {savedItems: [...state.savedItems, action.item]});
-    default:
+    
+    case types.UPDATE_ITEM_SUCCESS:{
+      const items = [...state.items];
+      items[action.data.index] = action.data.item;
+      return Object.assign({}, state, {items: items});
+    }
+
+    default:{
       return state;
+    }
   }
 }

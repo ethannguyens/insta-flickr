@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as instaFlickrActions from '../../actions/instaFlickrActions';
+import * as instaFlickrActions from '../../../actions/instaFlickrActions';
 
-import ImageCard from './ImageCard';
+import ImageCard from '../ImageCard/ImageCard';
 
 class ImageSection extends React.Component {
   constructor(props, context) {
@@ -14,7 +14,7 @@ class ImageSection extends React.Component {
   }
 
   getImageCards() {
-    let ImageCards = this.props.instaFlickr.items.map((item, index) => <ImageCard key={index} item={index}/>);
+    let ImageCards = this.props.instaFlickr.items.map((item, index) => <ImageCard key={index} index={index}/>);
 
     return ImageCards;
   };

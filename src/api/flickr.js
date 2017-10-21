@@ -9,10 +9,9 @@ class Flickr {
         jsonpCallbackFunction: 'jsonFlickrFeed'
       }).then(response => {
         response.json().then(json => {
-          resolve(json.items)
-        })
+          resolve(json.items);
+        });
       }).catch(function (err) {
-        console.log(err);
         reject(err);
       });
     });
