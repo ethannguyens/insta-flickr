@@ -14,10 +14,7 @@ class ImageSection extends React.Component {
   }
 
   getImageCards() {
-    let ImageCards = this.props.instaFlickr.items.map((item, index) => <ImageCard key={index} title={item.title}
-                                                                                  author={item.author}
-                                                                                  img={item.media.m}
-    />);
+    let ImageCards = this.props.instaFlickr.items.map((item, index) => <ImageCard key={index} item={index}/>);
 
     return ImageCards;
   };

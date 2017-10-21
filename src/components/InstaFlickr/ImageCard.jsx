@@ -6,16 +6,40 @@ import * as instaFlickrActions from '../../actions/instaFlickrActions';
 
 import Flickr from '../../api/flickr';
 
-const ImageCard = ({title, img, author}) => {
-  return (
-    <article className="image-card">
-      <img src={Flickr.getImgSize(img, "large")} alt="" className="image-card__img"/>
-      <div className="image-card-overlay">
-        <div className="image-card-overlay__title">{title}</div>
-        <div className="image-card-overlay__save"></div>
-      </div>
-    </article>
-  )
+class ImageCard extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+  }
+
+  render() {
+    const item = this.props.instaFlickr.items[this.props.item];
+    return (
+      <article className="image-card">
+        <img src={Flickr.getImgSize(item.media.m, "large")} alt="" className="image-card__img"/>
+        <div className="image-card-overlay">
+          <div className="image-card-overlay__title">{item.title}</div>
+          <button className="image-card-overlay__save">Save</button>
+        </div>
+      </article>
+    )
+  }
 };
 
-export default ImageCard;
+ImageCard.propTypes = {
+  item: PropTypes.number.isRequired,
+  instaFlickr: PropTypes.array.isRequired
+};
+
+function mapStateToProps(state, ownProps) {
+  return {
+    instaFlickr: state.instaFlickr
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(instaFlickrActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ImageCard);
