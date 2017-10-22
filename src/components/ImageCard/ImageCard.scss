@@ -13,6 +13,7 @@
 
 .image-card__img {
   height: inherit;
+  max-width: 100%;
   border-radius: 2px;
 }
 
@@ -62,16 +63,11 @@
 
 @media (min-width: $media-sm) {
   .image-card {
-    width: 100%;
-    margin: 20px 0;
+    margin: 10px 10px;
 
     &:hover {
       transform: none;
     }
-  }
-
-  .image-card__img {
-    width: inherit;
   }
 }
 
@@ -84,9 +80,5 @@
     &:hover {
       transform: scale(1.05);
     }
-  }
-
-  .image-card__img {
-    width: auto;
   }
 }
