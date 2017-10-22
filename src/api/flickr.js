@@ -19,14 +19,19 @@ class Flickr {
 
   static getImgSize(img, size = "large") {
     switch(size) {
-      case "large": {
+      case "s": {
+        return img.split('_m.jpg')[0] + '_n.jpg';
+      }
+      case "m": {
         return img.split('_m.jpg')[0] + '_c.jpg';
+      }
+      case "l": {
+        return img.split('_m.jpg')[0] + '_b.jpg';
       }
       default: {
         return img.split('_m.jpg')[0] + '_c.jpg';
       }
     }
-
   }
 }
 

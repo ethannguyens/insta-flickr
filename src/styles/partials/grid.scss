@@ -205,3 +205,46 @@
     padding: 2em 0 0 2em;
   }
 }
+
+//Grid for image cards
+.Grid--4 {
+  /* Prevent vertical gaps */
+  line-height: 0;
+
+  -webkit-column-count: 4;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    4;
+  -moz-column-gap:      0px;
+  column-count:         4;
+  column-gap:           0px;
+  grid-gap: 30px;
+}
+
+.Grid--4 > .Grid-cell {
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (min-width: $media-sm) {
+  .Grid--4 {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
+
+@media (min-width: $media-md) {
+  .Grid--4 {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media (min-width: $media-lg) {
+  .Grid--4 {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+  }
+}

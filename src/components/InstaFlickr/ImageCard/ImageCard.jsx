@@ -27,11 +27,11 @@ class ImageCard extends React.Component {
   render() {
     this.item = this.props.instaFlickr.items[this.props.index];
     return (
-      <article className={this.customClass()}>
-        <img src={Flickr.getImgSize(this.item.media.m, "large")} alt={this.item.title} className="image-card__img"/>
+      <article className={`${this.customClass()}`}>
+        <img src={Flickr.getImgSize(this.item.media.m, "m")} alt={this.item.title} className="image-card__img"/>
         <div className="image-card-overlay">
-          <div className="image-card-overlay__title">{this.item.title}</div>
-          <button className="image-card-overlay__save" onClick={this.favouriteHandler}>Save</button>
+          <p className="image-card-overlay__title">{this.item.title}</p>
+          <button className="image-card-overlay__save" onClick={this.favouriteHandler}>♥</button>
         </div>
       </article>
     )

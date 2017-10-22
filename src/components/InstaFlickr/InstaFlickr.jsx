@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as instaFlickrActions from '../../actions/instaFlickrActions';
 
+import './InstaFlickr.scss';
 
 import ImageSection from './ImageSection/ImageSection';
 
