@@ -4,3 +4,50 @@
 $media-sm: 320px;
 $media-md: 768px;
 $media-lg: 1024px;
+
+//Font
+$main-serif: 'EB Garamond', serif;
+$main-sans: 'Oxygen', sans-serif;
+$main-mono: 'Oxygen Mono', monospace;
+
+//Font Size
+$font-xxs: 12px;
+$font-xs: 16px;
+$font-s: 20px;
+$font-m: 24px;
+$font-l: 32px;
+$font-xl: 44px;
+$font-xxl: 64px;
+
+//Font Weight
+$weight-m: 600;
+$weight-l: 900;
+
+
+//Color
+$brand-main: #fff;
+$brand-sub: #000;
+$brand-grey: #525252;
+$brand-grey-t1: #b9b9b9;
+$brand-grey-sub: #eee;
+$brand-black: #272727;
+
+//Widget Height
+$widget-height-s: 350px;
+$widget-height-m: 500px;
+$widget-height-l: 600px;
+$widget-height-xl: 700px;
+$widget-height-xxl: 800px;
+
+//Padding
+$padding-s: 5%;
+
+//Display Flex
+@mixin display-flex() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+

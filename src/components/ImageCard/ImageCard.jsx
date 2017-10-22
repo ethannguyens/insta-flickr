@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as instaFlickrActions from '../../../actions/instaFlickrActions';
+import * as instaFlickrActions from '../../actions/instaFlickrActions';
 
-import Flickr from '../../../api/flickr';
+import Flickr from '../../api/flickr';
 
 import './ImageCard.scss';
 
@@ -16,7 +16,6 @@ class ImageCard extends React.Component {
   }
 
   favouriteHandler() {
-    console.log('favouriteHandler');
     this.item.save ? this.props.actions.removeItem(this.props.index, this.item) : this.props.actions.saveItem(this.props.index, this.item);
   }
 

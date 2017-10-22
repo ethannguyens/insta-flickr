@@ -3,12 +3,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {isTouchDevice} from '../modules/utility';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
+
+import {menu, footer, term, social} from '../database/database';
+
 
 import '../styles/main.scss';
 
 class App extends React.Component {
   constructor() {
     super();
+    this.menu = menu;
+    this.footer = footer;
+    this.term = term;
+    this.social = social;
   }
 
   componentDidMount() {
@@ -23,8 +32,15 @@ class App extends React.Component {
   render() {
     return (
       <div className={'nguyene-insta-flickr'}>
-        <div className="title">React-Redux Webpack Express - Ethan Nguyen</div>
+        <Header menu={this.menu}/>
         {this.props.children}
+        <Footer footer={this.footer}
+                title="Let's get to know me better"
+                link="ethan.nguyens@gmail.com"
+                text="© 2017 Ethan Nguyen. All rights reserved"
+                term={this.term}
+                social={this.social}
+        />
       </div>
     );
   }

@@ -1,0 +1,128 @@
+@import '../../styles/modules/variables';
+
+.header {
+  justify-content: space-around;
+  font-family: $main-sans;
+  text-transform: uppercase;
+  z-index: 999;
+  color: $brand-main;
+  width: 100%;
+  overflow: hidden;
+  background: $brand-black;
+  -webkit-font-smoothing: antialiased;
+  height: 88px;
+}
+
+.logo {
+  color: $brand-main;
+  z-index: 999;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.header_nav {
+  position: absolute;
+  top: 10%;
+  left: 100%;
+  z-index: 99;
+  width: 50%;
+  -moz-transition: all 0.5s ease 0.1s, width 0s ease-out 0.1s, border-width 0s ease-out 0.1s;
+  -webkit-transition: all 0.5s ease 0.1s, width 0s ease-out 0.1s, border-width 0s ease-out 0.1s;
+}
+
+.header_navItems {
+  background: $brand-main;
+  padding: 10px;
+  justify-content: space-around;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+
+.header_navItem {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 900;
+  border-bottom: 4px double  $brand-sub;
+  text-align: center;
+  color: $brand-black;
+}
+
+.header_navItem:last-child {
+  border-bottom: none;
+}
+
+.header_navItemLink {
+  -webkit-font-smoothing: antialiased;
+  color: $brand-black;
+}
+
+//header active
+.header.active {
+  .header_nav {
+    left: 50%;
+    z-index: 999;
+  }
+}
+
+
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes slide {
+  100% { left: 0; }
+}
+
+@media (min-width: $media-md) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    opacity: 0.8;
+    color: $brand-main;
+  }
+
+  .logo:hover {
+    opacity: 1;
+  }
+
+  .header_nav {
+    left: unset;
+    width: unset;
+    top: 5%;
+    right: 5%;
+    color: $brand-main;
+    background: none;
+  }
+
+  .header_navItems {
+    background: none;
+  }
+
+  .header_navItem {
+    border: none;
+  }
+
+  .header_navItemLink {
+    opacity: 0.8;
+    color: $brand-main;
+
+  }
+
+  .header_navItemLink:hover {
+    opacity: 1;
+  }
+
+  .header_menuIcon {
+    display: none;
+  }
+
+  .header_navItems {
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-end;
+  }
+}
