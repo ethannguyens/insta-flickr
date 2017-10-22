@@ -1,4 +1,6 @@
+@import '../../styles/modules/variables';
+
 .image-section {
   text-align: center;
-  background: #eee;
+  background: $brand-grey-sub;
 }

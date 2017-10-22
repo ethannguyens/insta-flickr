@@ -13,23 +13,44 @@ class ImageCard extends React.Component {
     super(props, context);
 
     this.favouriteHandler = this.favouriteHandler.bind(this);
+    this.saveItem = this.saveItem.bind(this);
+    this.removeItem = this.removeItem.bind(this);
+    this.customClass = this.customClass.bind(this);
+    this.isSaved = this.isSaved.bind(this);
+
+  }
+
+  saveItem() {
+    this.props.actions.saveItem(this.props.item);
+  }
+
+  removeItem() {
+    this.props.actions.removeItem(this.props.item);
   }
 
   favouriteHandler() {
-    this.item.save ? this.props.actions.removeItem(this.props.index, this.item) : this.props.actions.saveItem(this.props.index, this.item);
+    this.isSaved() ? this.removeItem() : this.saveItem();
+  }
+
+  isSaved() {
+    for (let item of this.props.instaFlickr.savedItems) {
+      if (JSON.stringify(this.props.item) === JSON.stringify(item)) return true
+    }
+    return false;
+
   }
 
   customClass() {
-    return this.item.save ? 'image-card image-card--saved' : 'image-card';
+    return this.isSaved() ? 'image-card image-card--saved' : 'image-card';
   }
 
   render() {
-    this.item = this.props.instaFlickr.items[this.props.index];
     return (
-      <article className={`${this.customClass()}`}>
-        <img src={Flickr.getImgSize(this.item.media.m, "m")} alt={this.item.title} className="image-card__img"/>
+      <article className={`image-card image-card--${this.props.index} ${this.customClass()}`}>
+        <img src={Flickr.getImgSize(this.props.item.media.m, "m")} alt={this.props.item.title}
+             className="image-card__img"/>
         <div className="image-card-overlay">
-          <p className="image-card-overlay__title">{this.item.title}</p>
+          <p className="image-card-overlay__title">{this.props.item.title}</p>
           <button className="image-card-overlay__save" onClick={this.favouriteHandler}>♥</button>
         </div>
       </article>
@@ -39,6 +60,7 @@ class ImageCard extends React.Component {
 
 ImageCard.propTypes = {
   index: PropTypes.number.isRequired,
+  item: PropTypes.object.isRequired,
   instaFlickr: PropTypes.array.isRequired
 };
 

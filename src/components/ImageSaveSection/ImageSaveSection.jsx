@@ -15,16 +15,16 @@ class ImageSaveSection extends React.Component {
   }
 
   getImageCards() {
-    let ImageCards = this.props.instaFlickr.items.map((item, index) => {
-      if (item.save) return <ImageCard key={index} index={index}/>;
+    console.log(this.props.instaFlickr.savedItems);
+    return this.props.instaFlickr.savedItems.map((item, index) => {
+      return <ImageCard key={index} index={index} item={item}/>;
     });
-    return ImageCards;
   };
 
   render() {
     return (
       <section className="image-save-section">
-        {this.props.instaFlickr.items.length > 0 && this.getImageCards()}
+        {this.getImageCards()}
       </section>
     )
   }

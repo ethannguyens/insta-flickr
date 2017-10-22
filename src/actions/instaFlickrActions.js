@@ -11,29 +11,27 @@ export function updateItemSucess(data) {
   return {type: types.UPDATE_ITEM_SUCCESS, data};
 }
 
+export function saveItemSuccess(item) {
+  return {type: types.SAVE_ITEM_SUCCESS, item};
+}
+
+export function removeItemSuccess(item) {
+  return {type: types.REMOVE_ITEM_SUCCESS, item};
+}
+
 export function loadFeeds(tags) {
   return (dispatch) => {
     Flickr.getFeeds(tags).then(items => dispatch(loadFeedsSuccess(items)));
   };
 }
 
-export function saveItem(index, item) {
+export function saveItem(item) {
   return (dispatch) => {
-    const savedItem = Object.assign({}, item, {save: true});
-    const data = {
-      index: index,
-      item: savedItem
-    };
-    dispatch(updateItemSucess(data));
+    dispatch(saveItemSuccess(item));
   };
 }
-export function removeItem(index, item) {
+export function removeItem(item) {
   return (dispatch) => {
-    const removeItem = Object.assign({}, item, {save: false});
-    const data = {
-      index: index,
-      item: removeItem
-    };
-    dispatch(updateItemSucess(data));
+    dispatch(removeItemSuccess(item));
   };
 }
