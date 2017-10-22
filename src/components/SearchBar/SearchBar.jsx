@@ -23,16 +23,14 @@ class SearchBar extends React.Component {
     this.props.actions.loadFeeds(this.state.value);
     event.preventDefault();
   }
-  
+
   render() {
     return (
-        <form className="search-bar" onSubmit={this.loadFeeds}>
-          <input type="text" className="search-bar__input" value={this.state.value} onChange={this.handleChange} placeholder="What do you want to see?" />
-            <button type="submit" className="search-bar__button" onClick={this.loadFeeds}>
-              <i className="saerch-bar__icon" />
-              Search
-            </button>
-        </form>
+      <form className="search-bar" onSubmit={this.loadFeeds}>
+        <input type="text" className="search-bar__input" value={this.state.value} onChange={this.handleChange}
+               placeholder="Want to see more?"/>
+        <button type="submit" className="search-bar__button" onClick={this.loadFeeds}>Search</button>
+      </form>
     )
   }
 }

@@ -8,13 +8,15 @@
 
 .search-bar__input {
   height: 50px;
-  font-size: 14px;
-  width: 200px;
+  font-size: 16px;
+  width: 175px;
   color: #fff;
   background: none;
   border: none;
   padding-left: 5%;
   outline: none;
+  display: inline-block;
+  margin-right: 0;
 }
 
 .search-bar__button {
@@ -30,6 +32,7 @@
   text-transform: uppercase;
   font-family: $main-sans;
   font-weight: 900;
+  cursor: pointer;
 
   &:hover {
     opacity: 1;
