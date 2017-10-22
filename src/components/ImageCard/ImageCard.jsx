@@ -46,7 +46,7 @@ class ImageCard extends React.Component {
 
   render() {
     return (
-      <article className={`image-card image-card--${this.props.index} ${this.customClass()}`}>
+      <article className={`image-card--${this.props.index} ${this.customClass()}`}>
         <img src={Flickr.getImgSize(this.props.item.media.m, "m")} alt={this.props.item.title}
              className="image-card__img"/>
         <div className="image-card-overlay">
