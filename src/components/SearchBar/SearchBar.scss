@@ -1,0 +1,48 @@
+@import '../../styles/modules/variables';
+
+.search-bar {
+  border-bottom: solid 1px #eee;
+  width: 270px;
+  height: 50px;
+}
+
+.search-bar__input {
+  height: 50px;
+  font-size: 14px;
+  width: 200px;
+  color: #fff;
+  background: none;
+  border: none;
+  padding-left: 5%;
+  outline: none;
+}
+
+.search-bar__button {
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  border: solid 1px #eee;
+  background: none;
+  height: 27px;
+  border-radius: 0;
+  outline: none;
+  opacity: 0.8;
+  text-transform: uppercase;
+  font-family: $main-sans;
+  font-weight: 900;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@media (min-width: $media-md) {
+  .search-bar {
+    margin-left: 5%;
+    margin-top: 10px;
+  }
+
+  .search-bar__input {
+    padding: 0;
+  }
+}

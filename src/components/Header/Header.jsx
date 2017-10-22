@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
-import {Link, IndexLink} from 'react-router';
+import {Link} from 'react-router';
+import SearchBar from '../SearchBar/SearchBar';
 
 require('./MenuIcon.scss');
 require('./Header.scss');
@@ -28,7 +29,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <div className="logo">E/N</div>
+        <SearchBar />
         <div className="header_menuIcon">
           <span></span>
           <span></span>
