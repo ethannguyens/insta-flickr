@@ -13,49 +13,49 @@ const menu = [
 
 const footer = [{
   id: "portfolio",
-  link: "portfolio",
+  link: "http://ethannguyens.com/portfolio",
   text: "portfolio"
 },
   {
     id: "education",
-    link: "education",
+    link: "http://ethannguyens.com/",
     text: "education"
   },
   {
     id: "about",
-    link: "about",
+    link: "http://ethannguyens.com/",
     text: "about"
   },
   {
     id: "blog",
-    link: "blog",
+    link: "http://ethannguyens.blogspot.co.uk/",
     text: "blog"
   },
   {
     id: "resume",
-    link: "resume",
+    link: "http://ethannguyens.com/resume",
     text: "resume"
   },
   {
     id: "contact",
-    link: "contact",
+    link: "http://ethannguyens.com/",
     text: "contact"
   }];
 
 const term = [
   {
     id: "term",
-    link: "/term",
+    link: "/",
     text: "term"
   },
   {
     id: "privacy",
-    link: "/privacy",
+    link: "/",
     text: "privacy"
   },
   {
     id: "copyright",
-    link: "/copyright",
+    link: "/",
     text: "copyright"
   }];
 
