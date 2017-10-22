@@ -10,20 +10,20 @@
   overflow: hidden;
   background: $brand-black;
   -webkit-font-smoothing: antialiased;
-  height: 88px;
+  height: 80px;
 }
 
 .logo {
   color: $brand-main;
   z-index: 999;
   position: absolute;
-  top: 5%;
+  top: 20px;
   left: 5%;
 }
 
 .header_nav {
   position: absolute;
-  top: 10%;
+  top: 50px;
   left: 100%;
   z-index: 99;
   width: 50%;
@@ -91,12 +91,12 @@
   }
 
   .header_nav {
+    top: 20px;
     left: unset;
     width: unset;
-    top: 5%;
-    right: 5%;
     color: $brand-main;
     background: none;
+    right: 0;
   }
 
   .header_navItems {

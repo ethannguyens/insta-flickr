@@ -8,10 +8,6 @@
   cursor: pointer;
   box-shadow: -2px 2px 10px 0px rgba(#444, 0.4);
   transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 }
 
 .image-card__img {
@@ -58,5 +54,36 @@
 .image-card--saved {
   .image-card-overlay__save {
     color: #ff6a80;
+  }
+}
+
+@media (min-width: $media-sm) {
+  .image-card {
+    width: 100%;
+    margin: 20px 0;
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  .image-card__img {
+    width: inherit;
+  }
+}
+
+@media (min-width: $media-md) {
+  .image-card {
+    height: 300px;
+    width: auto;
+    margin: 10px;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .image-card__img {
+    width: auto;
   }
 }

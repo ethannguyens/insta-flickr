@@ -10,6 +10,7 @@ import {menu, footer, term, social} from '../database/database';
 
 
 import '../styles/main.scss';
+import './App.scss';
 
 class App extends React.Component {
   constructor() {
