@@ -75,8 +75,8 @@ class Footer extends React.Component {
 
 Footer.propTypes = {
   footer: PropTypes.array.isRequired,
-  term: PropTypes.array,
-  social: PropTypes.array,
+  term: PropTypes.array.isRequired,
+  social: PropTypes.array.isRequired,
   highlight: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
