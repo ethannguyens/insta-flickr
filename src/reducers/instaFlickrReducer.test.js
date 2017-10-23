@@ -24,17 +24,25 @@ describe('Insta Flickr Reducers', () => {
     expect(actualState).toEqual(expectedState);
   });
 
-  it('should return new state with updated items for UPDATE_ITEM_SUCCESS', () => {
+  it('should return new state with the saved item for ADD_ITEM_SUCCESS', () => {
     //Arrange
-    const state = Object.assign({}, initialStates.instaFlickr, {items: ['a', 'b']});
-    const data = {
-      index: 0,
-      item: 'c'
-    };
-    const action = {type: types.UPDATE_ITEM_SUCCESS, data: data};
-    const expectedState = Object.assign({}, state, {items: ['c', 'b']});
+    const item = {a: 'a'};
+    const action = {type: types.SAVE_ITEM_SUCCESS, item: item};
+    const expectedState = Object.assign({}, initialStates.instaFlickr, {savedItems: [item]});
     //Act
-    const actualState = instaFlickrReducer(state, action);
+    const actualState = instaFlickrReducer(undefined, action);
+    //Assert
+    expect(actualState).toEqual(expectedState);
+  });
+
+  it('should return new state without the remove item for REMOVE_ITEM_SUCCESS', () => {
+    //Arrange
+    const item = {a: 'a'};
+    const action = {type: types.REMOVE_ITEM_SUCCESS, item: item};
+    const state = Object.assign({}, initialStates.instaFlickr, {saveItems: [{a: 'a'}]});
+    const expectedState = Object.assign({}, initialStates.instaFlickr, {savedItems: []});
+    //Act
+    const actualState = instaFlickrReducer(undefined, action);
     //Assert
     expect(actualState).toEqual(expectedState);
   });
