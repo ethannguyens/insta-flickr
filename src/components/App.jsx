@@ -27,12 +27,12 @@ class App extends React.Component {
   }
 
   addNontouchClass() {
-    document.querySelector('.nguyene-insta-flickr').classList.add('nontouch');
+    this.div.classList.add('nontouch');
   }
 
   render() {
     return (
-      <div className={'nguyene-insta-flickr'}>
+      <div className='nguyene-insta-flickr' ref={(div) => {this.div = div;}}>
         <Header menu={this.menu}/>
         {this.props.children}
         <Footer footer={this.footer}
