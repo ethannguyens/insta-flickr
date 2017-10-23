@@ -61,7 +61,7 @@ class ImageCard extends React.Component {
 ImageCard.propTypes = {
   index: PropTypes.number.isRequired,
   item: PropTypes.object.isRequired,
-  instaFlickr: PropTypes.array.isRequired
+  instaFlickr: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {

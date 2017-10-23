@@ -16,19 +16,19 @@ class Header extends React.Component {
   }
 
   eventHandler() {
-    const menu = document.querySelector('.header_menuIcon');
-    const header = document.querySelector('.header');
+    const menu = this.header.querySelector('.header_menuIcon');
+    console.log(menu);
     if (menu) {
       menu.addEventListener('click', () => {
-        if (header.classList.contains('active')) header.classList.remove('active');
-        else header.classList.add('active');
+        if (this.header.classList.contains('active')) this.header.classList.remove('active');
+        else this.header.classList.add('active');
       });
     }
   }
 
   render() {
     return (
-      <div className="header">
+      <div className="header" ref={(div) => {this.header = div;}}>
         <SearchBar />
         <div className="header_menuIcon">
           <span></span>

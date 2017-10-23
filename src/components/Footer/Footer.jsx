@@ -14,20 +14,18 @@ class Footer extends React.Component {
   }
 
   eventHandler() {
-    const menu = document.querySelector('.footer_menuIcon');
-    const footer = document.querySelector('.footer');
+    const menu = this.footer.querySelector('.footer_menuIcon');
     if (menu) {
       menu.addEventListener('click', () => {
-        if (footer.classList.contains('active')) footer.classList.remove('active');
-        else footer.classList.add('active');
+        if (this.footer.classList.contains('active')) this.footer.classList.remove('active');
+        else this.footer.classList.add('active');
       });
     }
   }
 
   render() {
     return (
-    <div className="footer">
-
+    <div className="footer" ref={(div) => {this.footer = div;}}>
       <nav className="footer-nav">
         <ul className="Grid footer-nav-menu">
           {this.props.footer.map((item, i) => {

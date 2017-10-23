@@ -30,7 +30,7 @@ class ImageSection extends React.Component {
 }
 
 ImageSection.propTypes = {
-  instaFlickr: PropTypes.array.isRequired
+  instaFlickr: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {

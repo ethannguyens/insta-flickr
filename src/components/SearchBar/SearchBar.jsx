@@ -36,7 +36,7 @@ class SearchBar extends React.Component {
 }
 
 SearchBar.propTypes = {
-  instaFlickr: PropTypes.array.isRequired
+  instaFlickr: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
