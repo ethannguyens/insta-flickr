@@ -23,7 +23,7 @@
     "build": "babel-node app/tools/build.js",
     "postbuild": "babel-node app/tools/distServer.js",
     "babel-test": "babel-node src/modules/word-prime-count",
-    "heroku-prebuild": "npm-run-all clean-dist lint build:html",
+    "heroku-prebuild": "yarn install && npm-run-all clean-dist lint build:html",
     "heroku-postbuild": "babel-node app/tools/build.js",
     "remove:test": "rm -rf app/test/bundle"
   },

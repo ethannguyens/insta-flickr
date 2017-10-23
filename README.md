@@ -3,31 +3,32 @@
 > An React-Redux Webpack Application to fetch images from flickr and allow user to save it.
 
 ### Installation
-
+Both `yarn` and `npm` package manager work for this project. I use `yarn` for this documentation, swap out for 'npm' if you want to
 ```
-$ npm install
+$ yarn install
 ```
 
-Install all dependencies by running NPM command. All the dependencies are required for the app server and client 
+Install all dependencies by running `yarn` command. All the dependencies are required for the app server and client for developments.
 
 ### Dependencies
 * Node ^6.0
 * Npm ^3.0
+* Yarn ^1.0
 
 ### Repository
-This project is currently stored publicly on GitHub: [https://github.com/ethannguyens/ctm](https://github.com/ethannguyens/ctm)
+This project is currently stored publicly on GitHub: [https://github.com/ethannguyens/insta-flickr](https://github.com/ethannguyens/insta-flickr)
 
 ### Development Mode
 ```
-$ npm run start
+$ yarn run start
 ```
-This will enable webpack watch, hot module reloading, linting watch and test watch. This allows developers develop with instant feedback from the browser thanks to hot module reloading.
+This will enable webpack watch, hot module reloading, linting watch and test watch. This allows developers to develop with instant feedback from the browser thanks to hot module reloading.
 The task will automatically open the page  [http://localhost:5000](http://localhost:5000).
 The bundle version of development contains source map allow developers to easily debug.
 
 ### Deployment Mode
 ```
-$ npm run build
+$ yarn run build
 ```
 This will bundle up the application and put it in the dist folder and ready to deploy.
 The task will automatically open the page  [http://localhost:5000](http://localhost:5000).
