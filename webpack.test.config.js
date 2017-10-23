@@ -40,17 +40,23 @@ const configuration = {
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "null-loader"}
     ]
   },
+  externals:[{
+    xmlhttprequest: '{XMLHttpRequest:XMLHttpRequest}',
+    nodeModules: 'node_modules',
+    'react/addons': true,
+    "jsdom": "window",
+    "cheerio": "window",
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+    'react-addons-test-utils': 'react-dom'
+  }],
   node: {
     console: true,
     fs: 'empty',
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  },
-  externals: [{
-    xmlhttprequest: '{XMLHttpRequest:XMLHttpRequest}',
-    nodeModules: 'node_modules'
-  }]
+  }
 };
 
 module.exports = configuration;
