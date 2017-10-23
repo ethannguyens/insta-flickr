@@ -1,4 +1,4 @@
-# Insta FLickr React-Redux SAP
+# Insta Flickr React-Redux SAP
 > An React-Redux Webpack Application to fetch images from flickr and allow user to save it.
 
 App is available here [https://en-insta-flickr.herokuapp.com/](https://en-insta-flickr.herokuapp.com/)
@@ -75,6 +75,7 @@ There is no doubt of benefits of using **TDD** in developement. However, there i
 ```
 $ yarn run test:browser
 ```
+This run on a `webpack-dev-server` and can be access at [http://localhost:3003/webpack-dev-server/test.html](http://localhost:3003/webpack-dev-server/test.html)
 
 The experience of supporting old browsers shows me the great benefit of running unit test on the real browser rather than `node` env or `phantomjs`. 
 
@@ -142,7 +143,7 @@ This is the measure for calling the App Api and request feeds Flickr Public Api.
 | JSON       | 272ms      |1.9KB  |
 | Total        | 272ms     | 1.9KB |
 
-##Conclusion
+## Conclusion
 Dealing with <del>outdated</del> restricted API is rather time comsuming and increase security risk. It also shows some useful thing of Jquery namely `$ajax`. In addition, serialise Redux store is rather easy and as useful as store it on a database. ALl these above make this project interesting and exciting. 
 
 Through this project, I want to demonstrate my skills as full stack javascript developer. I really enjoy building it and I hope you enjoy using it, so review it and give me feedbacks. Feel free to fork and changes as you like. Any other questions, please keep in touch.

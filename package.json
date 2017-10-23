@@ -11,7 +11,7 @@
     "lint": "node_modules/.bin/esw webpack.config.* app src",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress app/test/nodeTestSetup.js \"src/**/*.test.js\" \"app/**/*.test.js\" ",
-    "test:browser": "yarn run remove:test && npm-run-all --parallel unit:chrome",
+    "test:browser": "npm run remove:test && npm-run-all --parallel open:test unit:chrome",
     "unit:chrome": "webpack-dev-server --config webpack.test.config.js --content-base --port 3003 --hot --inline",
     "test:watch": "npm run test -- --watch",
     "test-single": "mocha --reporter progress app/tools/testSetup.js",
