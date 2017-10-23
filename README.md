@@ -73,7 +73,7 @@ There is no doubt of benefits of using **TDD** in developement. However, there i
 #### Unit Test on Browser
 
 ```
-$ yarn run test:browser
+$ yarn run test
 ```
 This run on a `webpack-dev-server` and can be access at [http://localhost:3003/webpack-dev-server/test.html](http://localhost:3003/webpack-dev-server/test.html)
 
@@ -87,10 +87,10 @@ The experience of supporting old browsers shows me the great benefit of running 
 #### Unit Test on Node
 
 ```
-$ yarn run test
+$ yarn run test:node
 ```
 
-I left 1 test fail on the node env to demonstrate the hassle of extra mocking to interact witht the browser. In this case, it is `localStorage`. The mocking of unit tests on the browser and unit test on node are different. For example, `mock` is used to mock request and response from the server where `xhr-nock` is used to mock the same for the browser but with differnt syntax. Thus, the project should chose 1 type of unit test environment and support it.
+There are tests failed on the node env to demonstrate the hassle of extra mocking to interact witht the browser. In this case, it is `localStorage`. The mocking of unit tests on the browser and unit test on node are different. For example, `mock` is used to mock request and response from the server where `xhr-nock` is used to mock the same for the browser but with differnt syntax. Thus, the project should chose 1 type of unit test environment and support it.
 
 #### Webpack
 `Webpack 3.0` is used to bundle all of the files of this project (js, jsx, scss, json...). JavaScipt file is transpile using babel before bundling.
