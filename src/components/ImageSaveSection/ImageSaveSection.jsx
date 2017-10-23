@@ -14,7 +14,6 @@ class ImageSaveSection extends React.Component {
   }
 
   getImageCards() {
-    console.log(this.props.instaFlickr.savedItems);
     return this.props.instaFlickr.savedItems.map((item, index) => {
       return <ImageCard key={index} index={index} item={item}/>;
     });
