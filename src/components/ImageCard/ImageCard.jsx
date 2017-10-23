@@ -34,6 +34,7 @@ class ImageCard extends React.Component {
 
   isSaved() {
     for (let item of this.props.instaFlickr.savedItems) {
+      //bad
       if (JSON.stringify(this.props.item) === JSON.stringify(item)) return true
     }
     return false;
