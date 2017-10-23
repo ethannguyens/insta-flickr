@@ -31,7 +31,7 @@ function setup() {
   return {
     props,
     wrapper
-  }
+  };
 }
 
 describe('Footer Component', () => {

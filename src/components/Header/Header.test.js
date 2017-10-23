@@ -29,7 +29,7 @@ function setup() {
   return {
     props,
     wrapper
-  }
+  };
 }
 
 describe('Header Component', () => {

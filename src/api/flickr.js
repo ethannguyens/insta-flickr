@@ -1,6 +1,6 @@
 const fetchJsonp = require('fetch-jsonp');
 
-const flickrUrl = "http://api.flickr.com/services/feeds/photos_public.gne?format=json&&extras=url_o&tags=";
+const flickrUrl = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&&extras=url_o&tags=";
 
 class Flickr {
   static getFeeds(tags = 'nature') {

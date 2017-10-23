@@ -20,7 +20,7 @@ function setup() {
   return {
     props,
     wrapper
-  }
+  };
 }
 
 describe('SearchBar Component', () => {

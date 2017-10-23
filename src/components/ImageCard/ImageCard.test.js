@@ -25,7 +25,7 @@ function setup() {
   return {
     props,
     wrapper
-  }
+  };
 }
 
 describe('ImageCard', () => {

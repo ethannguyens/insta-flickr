@@ -1,3 +1,5 @@
+/*eslint-disable no-console */
+
 export const loadState = () => {
   try {
     const serialisedState = localStorage.getItem('state');
