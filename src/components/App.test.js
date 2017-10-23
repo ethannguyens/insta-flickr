@@ -9,17 +9,13 @@ import {Provider} from 'react-redux';
 
 function setup() {
   const props = initialStates.instaFlickr;
-
   const createStore = (state = initialStates) => {
     const middleWares = [];
     const mockStore = configureStore(middleWares);
     return mockStore(state);
   };
-
   const store = createStore();
-
   const wrapper = mount(<Provider store={store}><App/></Provider>);
-
   return {
     props,
     wrapper

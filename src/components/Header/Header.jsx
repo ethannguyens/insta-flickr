@@ -17,7 +17,6 @@ class Header extends React.Component {
 
   eventHandler() {
     const menu = this.header.querySelector('.header_menuIcon');
-    console.log(menu);
     if (menu) {
       menu.addEventListener('click', () => {
         if (this.header.classList.contains('active')) this.header.classList.remove('active');
