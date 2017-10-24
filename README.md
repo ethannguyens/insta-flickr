@@ -8,7 +8,7 @@ App is available here [https://en-insta-flickr.herokuapp.com/](https://en-insta-
 $ yarn install
 ```
 
-Both `yarn` and `npm` package manager work for this project. I use `yarn` for this documentation, swap out for 'npm' if you want to
+Both `yarn` and `npm` package managers work for this project. I use `yarn` for this documentation, swap out for `npm` if you want to
 
 Install all dependencies by running `yarn` command. All the dependencies are required for the app server and client for developments.
 
@@ -24,8 +24,12 @@ This project is currently stored publicly on GitHub: [https://github.com/ethanng
 ```
 $ yarn run start
 ```
-This will enable webpack watch, hot module reloading, linting watch and test watch. This allows developers to develop with instant feedback from the browser thanks to hot module reloading.
-The task will automatically open the page  [http://localhost:5000](http://localhost:5000).
+This will start webpack watch, hot module reloading, linting watch and test watch. This allows developers to develop with instant feedback from the browser thanks to hot module reloading.
+
+* The task will automatically open test page on [http://localhost:3003](http://localhost:3003).
+
+* The task will automatically open the app on [http://localhost:5000](http://localhost:5000).
+
 The bundle version of development contains source map allow developers to easily debug.
 
 ### Deployment Mode
@@ -33,8 +37,11 @@ The bundle version of development contains source map allow developers to easily
 $ yarn run build
 ```
 This will bundle up the application and put it in the dist folder and ready to deploy.
-The task will automatically open the page  [http://localhost:5000](http://localhost:5000).
+
+* The task will automatically open the page  [http://localhost:5000](http://localhost:5000).
+
 This bundle version is minified without source mapping to reduce the size of the app to minimal.
+
 As an addition, this project as already been deployed to [Heroku](https://en-insta-flickr.herokuapp.com//) so that you may see it in action.
 
 ### Solution Approach
@@ -42,17 +49,17 @@ As an addition, this project as already been deployed to [Heroku](https://en-ins
 #### Flickr Public Feeds Api
 The provided API doesn't support CORS or allow Cross Origin Request. This cause a problem when making an api call from the app. In addition, the risk of injection is not neglectable. There a few potential solutions
 
-1. As suggested on the description, include the request to the header and supply the callback function. The callback function is hence needed to sit on the page globally. This is not ideal interm of interacting with react-redux. There is hassle of interacting with the store. Also, app will be not scalable and well structured.
-2. Cross Origin Request Proxy is not scalable and slow down the app.
-3. JSONP providing direct interact with the api and subdomains.
+1. As suggested on the description, include the request to the header and supply the callback function. The callback function is hence needed to sit on the page globally. This is not ideal in term of interacting with react-redux. There is clearly a problem of interacting with the store. Also, app will be not scalable and well structured.
+2. Cross Origin Request Proxy is an option but it is not scalable and slow.
+3. JSONP provides direct interact with the api and subdomains.
 
-Considering pros and cons of the aboved solutions, JSONP is selected without any doubt. There is already the imnplementation of JSONP on JQuery `$ajax`. Howver, including JQuery just to use it's JSONP is not ideal. Instead, `fetch-jsonp` - popular JSONP module is used. 
+Considering pros and cons of the aboved approaches, JSONP is selected without any doubt. There is already the imnplementation of JSONP on JQuery `$ajax`. Howver, including JQuery just to use it's JSONP is not ideal. Instead, `fetch-jsonp`, popular JSONP module, is used. 
 
 #### Flickr Api Limitation
-When requesting for the feeds, item is recieved contains the image url and other related details. However, there is no uniqued image id that can be to pipe to possible the flickr api to get the image details as well as diffent sizes. This create the problem on storing these images on the store. Ideally, I want to store the image id only and fetch api for more details when needed. Reality, I need to store the whole item object on the store. In addition, this cause the problem in identify the saved images. I need to compare the whole image object to identify which is slow and `JSON.stringify` is not fast or accurate.
+When requesting for the feeds, item is recieved contains the image url and other related details. However, there is no uniqued image id that can be to pipe to possible the flickr api to get the image details as well as diffent sizes. This create the problem on storing these images on the store. Ideally, I want to store the image id only and fetch api for more details when needed. Reality, I need to store the whole item object on the store. In addition, this causes the problem in identify the saved images. I need to compare the whole image object to identify which is slow and `JSON.stringify` is not fast or accurate.
 
 #### Store App State
-Evrthough a database (ideally NoSQL-MongoDB) to store the application state together user session is ideal for the app, the time limitation of the project create difficulty in implement it. In contrast, `localStorage` is the perfect place to store the application state - **redux store**. 
+Evrthough a database (ideally NoSQL-MongoDB) to store the application state together user session is ideal for the app, the time limitation of the project create difficulty in implementation. In contrast, `localStorage` is the perfect place to store the application state - **redux store**. 
 
 ```javascript
   try {
@@ -144,7 +151,7 @@ This is the measure for calling the App Api and request feeds Flickr Public Api.
 | Total        | 272ms     | 1.9KB |
 
 ## Conclusion
-Dealing with <del>outdated</del> restricted API is rather time comsuming and increase security risk. It also shows some useful thing of Jquery namely `$ajax`. In addition, serialise Redux store is rather easy and as useful as store it on a database. ALl these above make this project interesting and exciting. 
+Dealing with <del>outdated</del> restricted API is rather time comsuming and risk taking. This reflects the reality of web developmenet thats non of the APIs are perfect. By considering JSONP approach, the project also shows some benefits such as `$ajax` and explain why JQuery is still popular out there. In addition, by storing the store on the `localStorage` brings short term benefits as good as storing it on the database.
 
-Through this project, I want to demonstrate my skills as full stack javascript developer. I really enjoy building it and I hope you enjoy using it, so review it and give me feedbacks. Feel free to fork and changes as you like. Any other questions, please keep in touch.
+Through this project, I want to demonstrate my skills as a full stack javascript developer. I really enjoy building it and I hope you enjoy using it, so review it and give me feedbacks. Feel free to fork and changes as you like. Any other questions, please keep in touch.
 
