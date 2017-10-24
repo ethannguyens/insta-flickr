@@ -1,4 +1,4 @@
-# Insta Flickr React-Redux SAP
+# Insta Flickr React-Redux SPA
 > An React-Redux Webpack Application to fetch images from flickr and allow user to save it.
 
 App is available here [https://en-insta-flickr.herokuapp.com/](https://en-insta-flickr.herokuapp.com/)
